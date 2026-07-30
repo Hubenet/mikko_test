@@ -11,10 +11,19 @@
 <div class="example-wrapper">
     <h1>Mikko test - Dawn.tech! ✅</h1>
 
-    This friendly message is coming from:
+    <p>I created a small application (together with Github Copilot) to help a fictional company determine the dates
+    they need to pay salaries to their sales department. This company is handling their sales payroll
+    in the following way:</p>
     <ul>
-        <li>Your controller at <code>/home/user/mikko_test/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/home/user/mikko_test/templates/home/index.html.twig</code></li>
+        <li>Sales staff get a regular monthly fixed base salary and a monthly bonus.</li>
+        <li>The base salaries are paid on the last day of the month unless that day is a Saturday or a
+        Sunday (weekend).</li>
+        <li>On the 15th of every month bonuses are paid for the previous month, unless that day is a
+        weekend. In that case, they are paid the first Wednesday after the 15th.</li>
     </ul>
+    <p>The output of the application is a CSV file, containing the payment dates for the
+    remainder of this year. The CSV file contains three columns: month name, salary payment date and bonus payment
+    date.</p>
+    <a href="{{ path('payroll') }}" class="btn btn-primary">Download CSV</a>
 </div>
 {% endblock %}
