@@ -20,8 +20,8 @@ class PayrollController extends AbstractController
 
         $fp = fopen('php://memory', 'r+');
         fputcsv($fp, ['Month', 'Salary date', 'Bonus date']);
-        foreach ($rows as $r) {
-            fputcsv($fp, [$r['month'], $r['salary'], $r['bonus']]);
+        foreach ($rows as $row) {
+            fputcsv($fp, [$row['month'], $row['salary'], $row['bonus']]);
         }
         rewind($fp);
         $csv = stream_get_contents($fp);
